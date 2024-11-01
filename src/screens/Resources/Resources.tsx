@@ -9,6 +9,7 @@ import tw from 'twrnc';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import {getResource} from '@opacity-labs/react-native-opacity';
 import {Swing} from 'react-native-animated-spinkit';
+import {getArgs} from '../../utils/helpers';
 
 interface Props {
   navigation: NavigationProp<MainStackParams, 'Resources'>;
@@ -30,7 +31,10 @@ export const Resources = ({navigation, route}: Props) => {
     try {
       setIsLoading(true);
 
-      const result = await getResource(resource.alias as any);
+      // TEMP for functionality i.e. fare estimate coordinates
+      const args = getArgs(resource.alias);
+      const result = await getResource(resource.alias as any, ...args);
+
       navigation.navigate('Details', {
         platformId,
         resourceId: resource.id,
