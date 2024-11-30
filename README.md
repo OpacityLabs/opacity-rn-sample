@@ -1,8 +1,48 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
-
 # opacity-rn-sample
 
-Opacity Networks sample application written for React Native.
+The Opacity Networks sample application written for React Native on iOS, using a MAC development environment.
+This is a [React Native](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+Android support is still experimental at this stage.
+
+## Setup and installation
+
+### Set up a development environment
+
+1. Follow directions in [the React Native documentation](https://reactnative.dev/docs/set-up-your-environment).
+
+1. Install [Homebrew](https://brew.sh/) if necessary.
+
+1. Install the [CocoaPods](https://cocoapods.org/) depndency manager.
+
+   ```sh
+   brew install cocoapods
+   ```
+
+### Run the application
+
+1. Clone the github repository.
+
+    ```sh
+    git clone https://github.com/OpacityLabs/opacity-rn-sample.git
+    cd opacity-rn-sample
+    ```
+
+1. Install packages
+
+    ```sh
+    npm install
+    ```
+
+1. Update dependencies.
+
+   ```sh
+   cd ios
+   export RCT_ENABLE_NEW_ARCH=1
+   pod install --repo-update
+   cd ..
+   ```
+
+
 
 ## Getting started
 
