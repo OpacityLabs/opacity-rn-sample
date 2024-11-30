@@ -42,38 +42,28 @@ Android support is still experimental at this stage.
    cd ..
    ```
 
+1. Compile (if needed) and start the application.
+   Wait, this is a long process.
+
+   ```sh
+   npm ios
+   ```
+
+### Running
+
+1. You need an API key, get it from the [Opacity developer portal](https://app.opacity.network/login).
+
+1. 
 
 
-## Getting started
-
-Using the sample app requires a valid API key. Please visit [the developer portal](https://app.opacity.network) to sign up and generate one.
-
-**_Note: The Opacity SDK and network are in pre-alpha stage. Features are limited and may change. Check the developer portal for the latest updates._**
-
-## Install
-
-```
-yarn
-```
-
-Follow the platform specific instructions. Then:
-
-```
-npx react-native start
-```
-
-## iOS
-
-- You need to bump your minimum deployment target to iOS 14 (Via Xcode → [YOUR TARGET] → General → Deployment Target)
-- Do a `pod install` Module is a Turbo Module, therefore you need to enable the new arch. (RCT_ENABLE_NEW_ARCH=1 pod install)
-
-If you are pulling on the latest version cocoapods sometimes refuses to update it's main repo specs. You can force an update via:
 
 ```sh
 rm -rf ~/.cocoapods/repos/trunk
 pod repo update
 RCT_ENABLE_NEW_ARCH=1 pod install --repo-update
 ```
+
+
 
 ## Android (experimental)
 
