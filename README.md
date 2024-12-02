@@ -13,6 +13,8 @@ Android support is still experimental at this stage.
 1. Follow directions in [the React Native documentation](https://reactnative.dev/docs/set-up-your-environment).
    The latest version of XCode installs the command-line tools and the latest iOS emulator for you automatically.
 
+1. Install yarn.  **COMMAND GOES HERE**
+
 1. Install the [CocoaPods](https://cocoapods.org/) depndency manager.
 
    ```sh
@@ -31,26 +33,23 @@ Android support is still experimental at this stage.
 1. Install packages
 
     ```sh
-    npm install
+    yarn install
     ```
 
 1. Update dependencies.
    Note that you need to redo this step when you pull a new version from GitHub.
 
    ```sh
-   cd ios
-   export RCT_ENABLE_NEW_ARCH=1
-   pod install --repo-update
-   cd ..
+   yarn pods
    ```
 
 1. Compile (if needed) and start the application.
 
    ```sh
-   npm run ios
+   yarn ios
    ```
 
-   Note that compilation takes a long time.
+   Note that compilation takes a long time, especially the first one.
    Also, if you get a white iPhone screen, close the application and start it again.
 
 ### Run the application
