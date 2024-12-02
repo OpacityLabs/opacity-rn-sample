@@ -43,20 +43,29 @@ Android support is still experimental at this stage.
    ```
 
 1. Compile (if needed) and start the application.
-   Note that you might have to press **r** to reload it.
 
    ```sh
    npm run ios
    ```
 
+   Note that compilation takes a long time.
+   Also, if you get a white iPhone screen, close the application and start it again.
+
 ### Run the application
 
-1. You need an API key, get it from the [Opacity developer portal](https://app.opacity.network/login).
+1. You need an API key, get it from the [Opacity developer portal](https://app.opacity.network).
 
 1. The sample application should open automatically.
    If it does not, scroll right in the emulator and in the second screen click **opacitySample**.
 
 1. Paste the API key in the field and click **Next**.
+
+1. Select the platform to search.
+   For the purpsoe of this guide, select **GitHub**.
+
+1. Click the resource **Profile** and log on to your GitHub account.
+
+1. See that you can view your GitHub profile through Opacity.
 
 
 
