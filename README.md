@@ -43,6 +43,8 @@ Android support is still experimental at this stage.
    yarn pods
    ```
 
+1. Open **XCode**. 
+
 1. Compile (if needed) and start the application.
 
    ```sh
