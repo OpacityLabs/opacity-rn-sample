@@ -8,10 +8,10 @@ Android support is still experimental at this stage.
 
 ### Set up a development environment
 
+1. Install [Homebrew](https://brew.sh/) if necessary.
+
 1. Follow directions in [the React Native documentation](https://reactnative.dev/docs/set-up-your-environment).
    The latest version of XCode installs the command-line tools and the latest iOS emulator for you automatically.
-
-1. Install [Homebrew](https://brew.sh/) if necessary.
 
 1. Install the [CocoaPods](https://cocoapods.org/) depndency manager.
 
