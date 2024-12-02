@@ -33,7 +33,7 @@ export const Platforms = ({navigation}: Props) => {
       return;
     }
 
-    init(apiKey, false).catch(() => {
+    init(apiKey, false, 3).catch(() => {
       console.error(`Failed to Initialize SDK`);
     });
   }, []);

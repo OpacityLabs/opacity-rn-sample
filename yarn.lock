@@ -2072,13 +2072,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@opacity-labs/react-native-opacity@npm:^3.18.0":
-  version: 3.18.0
-  resolution: "@opacity-labs/react-native-opacity@npm:3.18.0"
+"@opacity-labs/react-native-opacity@npm:^3.20.3":
+  version: 3.20.3
+  resolution: "@opacity-labs/react-native-opacity@npm:3.20.3"
   peerDependencies:
     react: "*"
     react-native: "*"
-  checksum: f41075fd2d0d955f415a1b2dc9e1498e35e2ec20095a68e364f838e46a7758dde33f8a5394fe06719ef8b0b6c9e8be4654b2a678aff1d4955c077f0a64ba9404
+  checksum: 7a06c9ee3e183f0728b638835301f4ddd462028d54f7eb7e17f1d981f83f50e04e87ebcdb58fe13cf61f38b3b0688aff1eb4867fffe1a308fa57eee7d6fcf053
   languageName: node
   linkType: hard
 
@@ -7763,7 +7763,7 @@ __metadata:
     "@babel/core": ^7.20.0
     "@babel/preset-env": ^7.20.0
     "@babel/runtime": ^7.20.0
-    "@opacity-labs/react-native-opacity": ^3.18.0
+    "@opacity-labs/react-native-opacity": ^3.20.3
     "@react-native/babel-preset": 0.75.2
     "@react-native/eslint-config": 0.75.2
     "@react-native/metro-config": 0.75.2
