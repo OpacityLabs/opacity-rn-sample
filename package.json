@@ -15,7 +15,7 @@
     "pods": "cd ios && pod install && rm .xcode.env.local"
   },
   "dependencies": {
-    "@opacity-labs/react-native-opacity": "^3.20.3",
+    "@opacity-labs/react-native-opacity": "^3.20.8",
     "@react-navigation/native": "^6.1.18",
     "@react-navigation/native-stack": "^6.11.0",
     "@reduxjs/toolkit": "^2.2.7",
