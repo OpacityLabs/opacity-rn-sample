@@ -7,7 +7,7 @@ import {platformSelector} from '../../state/selectors';
 import {Image, Pressable, Text, View} from 'react-native';
 import tw from 'twrnc';
 import {SafeAreaView} from 'react-native-safe-area-context';
-import {getResource} from '@opacity-labs/react-native-opacity';
+import {get} from '@opacity-labs/react-native-opacity';
 import {Swing} from 'react-native-animated-spinkit';
 import {getArgs} from '../../utils/helpers';
 
@@ -33,7 +33,8 @@ export const Resources = ({navigation, route}: Props) => {
 
       // TEMP for functionality i.e. fare estimate coordinates
       const args = getArgs(resource.alias);
-      const result = await getResource(resource.alias as any, ...args);
+      // @TODO: temp add_flow
+      const result = await get('flow:uber_rider:profile' as any, ...args);
 
       navigation.navigate('Details', {
         platformId,

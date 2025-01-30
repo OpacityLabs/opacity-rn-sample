@@ -2713,13 +2713,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@opacity-labs/react-native-opacity@npm:4.0.4":
-  version: 4.0.4
-  resolution: "@opacity-labs/react-native-opacity@npm:4.0.4"
+"@opacity-labs/react-native-opacity@npm:4.0.14":
+  version: 4.0.14
+  resolution: "@opacity-labs/react-native-opacity@npm:4.0.14"
   peerDependencies:
     react: "*"
     react-native: "*"
-  checksum: 5757e69b2c394e61da0516505fe4e41674dae97c6d04004913d1d52674d176465bc97aba9da63da9bdfca68e0886c7484ddddfb69c2c962c2be854e42403fc8f
+  checksum: 76012050de0e6ab96b933e7f8cd28be5e0e88e9ea4e7187fbfd029747788339a1d2f37c94b3fc07f7e675ce1acf60e5b77d134932f974b7ffb2009b40abeae6f
   languageName: node
   linkType: hard
 
@@ -8485,7 +8485,7 @@ __metadata:
     "@babel/core": ^7.25.2
     "@babel/preset-env": ^7.25.3
     "@babel/runtime": ^7.25.0
-    "@opacity-labs/react-native-opacity": 4.0.4
+    "@opacity-labs/react-native-opacity": 4.0.14
     "@react-native-community/cli": 15.0.1
     "@react-native-community/cli-platform-android": 15.0.1
     "@react-native-community/cli-platform-ios": 15.0.1

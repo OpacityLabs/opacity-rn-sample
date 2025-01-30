@@ -1243,7 +1243,7 @@ PODS:
     - ReactCommon/turbomodule/bridging
     - ReactCommon/turbomodule/core
     - Yoga
-  - react-native-opacity (4.0.4):
+  - react-native-opacity (4.0.14):
     - DoubleConversion
     - glog
     - hermes-engine
@@ -1893,7 +1893,7 @@ SPEC CHECKSUMS:
   React-logger: 162c09cc432b02d4a0db31b1d98f6df5243a2679
   React-Mapbuffer: f760d2229640be48cb3c2d4832b5bbc3018123fc
   React-microtasksnativemodule: 1364ae5354f51b3ecee8eb718b5b6d1686d2ff4d
-  react-native-opacity: e3b0d04abc88c9be54adb0eda2701966e6783675
+  react-native-opacity: f6ae54096bea38e5ac3491ba5dd1da1a81bd012b
   react-native-safe-area-context: 38fdd9b3c5561de7cabae64bd0cd2ce05d2768a1
   React-nativeconfig: 539ff4de6ce3b694e8e751080568c281c84903ce
   React-NativeModulesApple: 771cc40b086281b820fe455fedebbe4341fd0c90
@@ -1924,7 +1924,7 @@ SPEC CHECKSUMS:
   ReactCommon: 832cdd669aeecd430d9ca1975d15676b38d0b263
   RNScreens: de6e57426ba0e6cbc3fb5b4f496e7f08cb2773c2
   SocketRocket: d4aabe649be1e368d1318fdf28a022d714d65748
-  Yoga: be6f55a028e86c83ae066f018e9b5d24ffc45436
+  Yoga: 2a5ae8f7db3c675ff5a781fb5d99c5f7a5d2fc11
 
 PODFILE CHECKSUM: 0a6b637b970719a72288772bfd9c9130ae528ff9
 
