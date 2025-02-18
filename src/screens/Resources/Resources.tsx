@@ -4,7 +4,7 @@ import {MainStackParams} from '../../navigation';
 import {useAppSelector} from '../../hooks/store';
 import {delay, isEqual, partialRight, sortBy} from 'lodash';
 import {platformSelector} from '../../state/selectors';
-import {Image, Pressable, Text, View} from 'react-native';
+import {Image, Pressable, ScrollView, Text, View} from 'react-native';
 import tw from 'twrnc';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import {get} from '@opacity-labs/react-native-opacity';
@@ -23,18 +23,20 @@ export const Resources = ({navigation, route}: Props) => {
     isEqual,
   );
 
-  // Flags
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
 
   const handleGetResources = async (resource: Resource) => {
     try {
       setIsLoading(true);
-
-      // TEMP for functionality i.e. fare estimate coordinates
       const args = getArgs(resource.alias);
-      // @TODO: temp add_flow
-      const result = await get('flow:uber_rider:profile' as any, ...args);
+
+      const result = await get(resource.alias as any, args);
+
+      // if incomplete returns empty object
+      if (Object.keys(result.json).length === 0) {
+        return setIsError(true);
+      }
 
       navigation.navigate('Details', {
         platformId,
@@ -93,28 +95,28 @@ export const Resources = ({navigation, route}: Props) => {
               into the platform to view the response.
             </Text>
           </View>
-          <View style={tw`p-4 gap-y-8`}>
-            {sortBy(platform.resources, 'name').map(resource => (
-              <Pressable
-                key={resource.id}
-                onPress={() => handleGetResources(resource)}
-                style={tw`flex-row items-center justify-between`}>
-                <View>
-                  <Text style={tw`text-white font-medium`}>
-                    {resource.name}
-                  </Text>
-                  <Text style={tw`text-neutral-500 text-xs`}>
-                    {resource.alias}
-                  </Text>
-                </View>
+          <ScrollView>
+            <View style={tw`p-4 gap-y-8`}>
+              {sortBy(platform.flows, 'name').map(flow => (
+                <Pressable
+                  key={flow.id}
+                  onPress={() => handleGetResources(flow)}
+                  style={tw`flex-row items-center justify-between`}>
+                  <View>
+                    <Text style={tw`text-white font-medium`}>{flow.name}</Text>
+                    <Text style={tw`text-neutral-500 text-xs`}>
+                      {flow.alias}
+                    </Text>
+                  </View>
 
-                <Image
-                  style={tw`h-6 w-6`}
-                  source={require('../../../assets/icons/chevron-right.png')}
-                />
-              </Pressable>
-            ))}
-          </View>
+                  <Image
+                    style={tw`h-6 w-6`}
+                    source={require('../../../assets/icons/chevron-right.png')}
+                  />
+                </Pressable>
+              ))}
+            </View>
+          </ScrollView>
         </SafeAreaView>
       </View>
 

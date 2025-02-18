@@ -43,7 +43,6 @@ interface Props {
 
 export const Details = ({navigation, route}: Props) => {
   const {platformId, resourceId, payload} = route.params;
-  console.log(payload.data);
 
   const platform = useAppSelector(
     partialRight(platformSelector, platformId),
