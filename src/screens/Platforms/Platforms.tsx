@@ -3,14 +3,7 @@ import {getResource, init} from '@opacity-labs/react-native-opacity';
 import {useAppDispatch, useAppSelector} from '../../hooks/store';
 import {apiKeySelector, platformsSelector} from '../../state/selectors';
 import {OPACITY_PLATFORMS_URL} from '../../constants';
-import {
-  Image,
-  Pressable,
-  ScrollView,
-  Text,
-  TouchableOpacity,
-  View,
-} from 'react-native';
+import {Image, Pressable, ScrollView, Text, View} from 'react-native';
 import tw from 'twrnc';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import {sortBy} from 'lodash';
@@ -33,24 +26,43 @@ export const Platforms = ({navigation}: Props) => {
       return;
     }
 
-    init(apiKey, false, 3).catch(() => {
+    init({
+      apiKey,
+      environment: 3,
+      shouldShowErrorsInWebView: false,
+    }).catch(() => {
       console.error(`Failed to Initialize SDK`);
     });
-  }, []);
+  }, [apiKey]);
 
   useEffect(() => {
-    // Ignore if apiKey is not available
-    if (!apiKey) return;
-
     (async () => {
-      const response = await fetch(OPACITY_PLATFORMS_URL, {
-        method: 'GET',
-        headers: {
-          'Authorization-Provider': 'opacity',
-          Authorization: `Bearer ${apiKey}`,
-          'Content-Type': 'application/json',
+      const sessionIdResponse = await fetch(
+        `https://api.opacity.network/sessions`,
+        {
+          method: 'POST',
+          headers: {
+            'Authorization-Provider': 'opacity',
+            Authorization: `Bearer ${apiKey}`,
+            'Content-Type': 'application/json',
+          },
         },
-      });
+      );
+
+      const sessionId = await sessionIdResponse.json();
+
+      const response = await fetch(
+        `https://api.opacity.network/platforms?all=true`,
+        {
+          method: 'GET',
+          headers: {
+            'Authorization-Provider': 'opacity',
+            Authorization: `Bearer ${apiKey}`,
+            'Content-Type': 'application/json',
+            'session-id': sessionId?.id,
+          },
+        },
+      );
 
       if (!response.ok) {
         throw new Error('GET platforms failed');

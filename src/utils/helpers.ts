@@ -1,19 +1,16 @@
-const UBER_FLOW_PARAM_REQUIRED = [
-  'uber:driver:read:trips',
-  'uber:rider:read:trip',
-  'uber:rider:read:trip_history',
+const UBER_FLOW_COORD_REQUIRED = [
+  'uber_rider:fare_estimate',
+  'uber_rider:ucomponent_api_checkout',
 ];
 
-const UBER_FARE_ALIAS = 'uber:rider:read:fare_estimate';
-
 export const getArgs = (alias: string) => {
-  if (alias === UBER_FARE_ALIAS) {
-    return [45.46372, 9.18839, 45.46369, 9.18851];
+  if (UBER_FLOW_COORD_REQUIRED.includes(alias)) {
+    return {
+      pickup_latitude: 40.33276382356346,
+      pickup_longitude: -3.8580982818840535,
+      destination_latitude: 40.36560098237766,
+      destination_longitude: -3.5985462938409354,
+    };
   }
-  if (UBER_FLOW_PARAM_REQUIRED.includes(alias)) {
-    let date = new Date();
-    date.setDate(date.getDate() - 5);
-    return [date.toLocaleString(), new Date().toLocaleString(), ''];
-  }
-  return [];
+  return null;
 };

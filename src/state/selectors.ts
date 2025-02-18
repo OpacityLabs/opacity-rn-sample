@@ -15,4 +15,4 @@ export const resourceSelector = (
 ) =>
   state.connectionData.platforms
     .find(platform => platform.id === platformId)
-    ?.resources.find(resource => resource.id === resourceId);
+    ?.flows.find(resource => resource.id === resourceId);

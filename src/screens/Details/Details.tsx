@@ -43,7 +43,6 @@ interface Props {
 
 export const Details = ({navigation, route}: Props) => {
   const {platformId, resourceId, payload} = route.params;
-  console.log(payload.data);
 
   const platform = useAppSelector(
     partialRight(platformSelector, platformId),
@@ -89,13 +88,7 @@ export const Details = ({navigation, route}: Props) => {
             <View
               style={tw`bg-[#06091C] border border-[#4E4E4E] min-h-[320px] rounded-2xl p-2`}>
               <View style={tw`p-2 overflow-hidden`}>
-                <JSONTree
-                  data={
-                    JSON.parse(payload.data)?.data ?? JSON.parse(payload.data)
-                  }
-                  theme={theme}
-                  invertTheme={false}
-                />
+                <JSONTree data={payload} theme={theme} invertTheme={false} />
               </View>
             </View>
           </View>
