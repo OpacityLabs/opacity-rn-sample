@@ -16,7 +16,7 @@
     "nuke": "watchman watch-del-all && rm -rf ios/build && rm -rf node_modules/ && rm -rf ./ios/Pods && yarn && yarn pods"
   },
   "dependencies": {
-    "@opacity-labs/react-native-opacity": "5.0.0",
+    "@opacity-labs/react-native-opacity": "^5.0.4",
     "@react-navigation/native": "^6.1.18",
     "@react-navigation/native-stack": "^6.11.0",
     "@reduxjs/toolkit": "^2.2.7",
